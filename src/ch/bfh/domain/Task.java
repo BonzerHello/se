@@ -1,5 +1,6 @@
 package ch.bfh.domain;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Task {
@@ -36,5 +37,10 @@ public class Task {
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public String toString(){
+        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+        return "Description: "+description+" Due Date: "+sdf.format(dueDate)+" Status: "+status;
     }
 }
